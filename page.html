@@ -1,0 +1,38 @@
+<html>
+    <title>
+
+    </title>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>>
+        <script>
+            $(document).ready(function(){
+                $("btnsubmit").click(function(){
+                $.ajax({url: "/", success: function(result){
+                 
+                $("#data").html(result);
+              }});
+            });
+            })
+          /*  function getDetails(){
+                console.log('inside ajay#');
+            $("btnsubmit").click(function(){
+              $.ajax({url: "/checkDate", success: function(result){
+                 
+                $("#data").html(result);
+              }});
+            });
+          };*/
+        </script>
+        
+<body>
+
+<form method="get", action="/handledate", name='dateform'>
+    <label for="date">Enter Date:</label>
+    <input type="text" id="dt" name="dt"><br><br>
+    
+    <input onClick="getDetails()" type="submit" value="Submit" id="btnsubmit">
+    <div id="data"></div>
+  </form>
+  </body>
+</head>
+</html>
